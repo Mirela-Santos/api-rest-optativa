@@ -11,25 +11,35 @@ class Modelo():
     def __del__(self):
         self.__cursor.close()
 
-    def obter_dados(self):
+    def obter_todos(self):
         instrucao = "SELECT * FROM {tabela}".format(tabela = self.__nome_tabela)
         try:
             self.__cursor.execute(instrucao)
             resultado = self.__cursor.fetchall()
             return resultado
         except:
-            print("ERRO...", self.__cursor._last_executed)
+            print("Erro ao executar.", self.__cursor._last_executed)
             return None
 
     def obter_por_id(self, id):
-        instrucao = "SELECT * FROM {tabela} WHERE id=%s".format(tabela = self.__nome_tabela)
-        self.__cursor.execute(instrucao, id)
-        resultado = self.__cursor.fetch()
-        return resultado
+        try:
+            instrucao = "SELECT * FROM {tabela} WHERE id=%s".format(tabela = self.__nome_tabela)
+            self.__cursor.execute(instrucao, id)
+            resultado = self.__cursor.fetchone()
+            return resultado
+        except:
+            print("Erro ao executar.", self.__cursor._last_executed)
+            return None
+
 
     def excluir_por_id(self, id):
-        instrucao = "DELETE FROM {tabela} WHERE id=%s".format(tabela = self.__nome_tabela)
-        self.__cursor.execute(instrucao, id)
+        try:
+            instrucao = "DELETE FROM {tabela} WHERE id=%s".format(tabela = self.__nome_tabela)
+            self.__cursor.execute(instrucao, id)
+            return True
+        except:
+            print("Erro ao executar.", self.__cursor._last_executed)
+            return False
 
     def obter_cursor(self):
         return self.__cursor;
