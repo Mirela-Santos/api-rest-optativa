@@ -9,11 +9,11 @@ class Cliente(Modelo):
         if id:
             dado = self.obter_por_id(id)
             if dado:
-                self.nome = dado[1];
-                self.cpf = dado[2];
-                self.cidade = dado[3];
-                self.telefone = dado[4];
-                self.profissao = dado[5];
+                self.nome = dado["nome"];
+                self.cpf = dado["cpf"];
+                self.cidade = dado["cidade"];
+                self.telefone = dado["telefone"];
+                self.profissao = dado["profissao"];
             else:
                 self.id = None;
                 self.nome = None;
@@ -50,10 +50,10 @@ class Cliente(Modelo):
             print(f"Não é possível excluir. {self.id}")
             return False
 
-    def obter_por_nome(self, nome):
+    def obter_dados(self, id):
         try:
-            instrucao = "SELECT * FROM {tabela} WHERE nome LIKE %s".format(tabela = self.Tabela)
-            self.obter_cursor().execute(instrucao, nome)
+            instrucao = "SELECT * FROM {tabela} WHERE id=%s".format(tabela = self.Tabela)
+            self.obter_cursor().execute(instrucao, id)
             resultado = self.obter_cursor().fetchone()
             return resultado
         except:

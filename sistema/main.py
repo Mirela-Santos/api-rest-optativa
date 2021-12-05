@@ -5,8 +5,8 @@ def main():
 
 #---------------------------------Cadastro de clientes-------------------------------------------
 
-    #controladorCliente = ControladorCliente()
-    #controladorCliente.cadastrar_cliente("Sandro", "00000000001", "Varginha", "12345678", "ator")
+    controladorCliente = ControladorCliente()
+    #controladorCliente.cadastrar_cliente("Sandro", "00000000001", "Varginha", "12345678", 7)
 
 #---------------------------------Atualizar Clientes--------------------------------------------
 
@@ -21,19 +21,19 @@ def main():
 #----------------------------------Obter dados do cliente------------------------
 
     #controladorCliente = ControladorCliente()
-    #cliente = controladorCliente.obter_dado_cliente("Sandro")
+    #cliente = controladorCliente.obter_dado_cliente(1)
     #print(cliente)
 
 #-------------------------------- Listar todos os clientes ----------------------
 
-    controladorCliente = ControladorCliente()
-    todos = controladorCliente.listar_todo_cliente()
-    print(todos)
+    #controladorCliente = ControladorCliente()
+    #todos = controladorCliente.listar_todo_cliente()
+    #print(todos)
 
 #---------------------------------Cadastrar profissão---------------------------
 
     #controladorProfissao = ControladorProfissao()
-    #controladorProfissao.cadastrar_profissao("bandido")
+    #controladorProfissao.cadastrar_profissao("Programador")
 
 #---------------------Atualizar profissão--------------------------
 

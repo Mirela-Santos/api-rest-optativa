@@ -4,17 +4,17 @@ class Profissao(Modelo):
     Tabela = "profissao"
 
     def __init__(self, id=None):
-        super().__init__(self.Tabela);
-        self.id = id;
+        super().__init__(self.Tabela)
+        self.id = id
         if id:
             dado = self.obter_por_id(id)
             if dado:
-                self.nome_profissao = dado[1];
+                self.nome_profissao = dado["profissao"]
             else:
-                self.id = None;
-                self.nome_profissao = None;
+                self.id = None
+                self.nome_profissao = None
         else:
-            self.nome_profissao = None;
+            self.nome_profissao = None
     
     def salvar(self):
         try:

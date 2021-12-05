@@ -58,10 +58,10 @@ def deletarCliente(id):
         return{"status": "ERRO", "mensagem": "Erro alterando cliente"}
 
 #----------------------------------Obter dados do cliente------------------------
-@app.route("/cliente/<nome>", methods=["GET"])
-def getClientByNome(nome):
+@app.route("/cliente/<id>", methods=["GET"])
+def getClientByNome(id):
     try:
-        cliente = controladorCliente.obter_dado_cliente(nome)
+        cliente = controladorCliente.obter_dado_cliente(id)
         return jsonify(cliente)
     except:
         return {"status": "ERRO", "mensagem": "Erro ao obter dados do cliente"}
@@ -93,20 +93,5 @@ def excluirProfissao(id):
     controladorProfissao.excluir_profissao(id)
     return{"status": "OK", "mensagem": "Profissão deletada com Sucesso"}
 
-
-
-
-
-
-
-
-@app.route("/",methods=["POST"])
-def cadastrar_cliente():
-    try:
-        dados=request.get__json()
-        nome = dados["nome"]
-        return {"status":"OK","mensagem":"Olá{nome}"}
-    except:
-        return {"status":"noup","mensagem":"Deu ruim"}
 
 app.run()

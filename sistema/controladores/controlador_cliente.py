@@ -31,9 +31,9 @@ class ControladorCliente():
         atualizar_alterar_cliente.salvar()
         pass
 
-    def obter_dado_cliente(self, nome):
+    def obter_dado_cliente(self, id):
         listar_cliente = Cliente()
-        return listar_cliente.obter_por_nome(nome)
+        return listar_cliente.obter_dados(id)
 
     def listar_todo_cliente(self):
         todo_cliente = Cliente()
