@@ -53,8 +53,8 @@ class Cliente(Modelo):
     def obter_por_nome(self, nome):
         try:
             instrucao = "SELECT * FROM {tabela} WHERE nome LIKE %s".format(tabela = self.Tabela)
-            self.__cursor.execute(instrucao, nome)
-            resultado = self.__cursor.fetchone()
+            self.obter_cursor().execute(instrucao, nome)
+            resultado = self.obter_cursor().fetchone()
             return resultado
         except:
             print("Erro ao executar.", self.__cursor._last_executed)

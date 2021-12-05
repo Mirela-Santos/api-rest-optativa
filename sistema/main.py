@@ -3,91 +3,47 @@ from controladores.controlador_profissao import ControladorProfissao
 
 def main():
 
-    #1-Cadastrar novo cliente:
-    #(usado para testar antes da criacao dos controladores)
-    #novo_cliente = Cliente()
-    #novo_cliente.nome = "Joao"
-    #novo_cliente.cpf = "00000000000"
-    #novo_cliente.cidade = "Varginha"
-    #novo_cliente.telefone = "32223322"
-    #novo_cliente.profissao = "ator"
-    #novo_cliente.salvar()
+#---------------------------------Cadastro de clientes-------------------------------------------
 
-    controladorCliente = ControladorCliente()
-    controladorCliente.cadastrar_cliente("Joao", "00000000001", "Varginha", "32223322", "ator")
-    controladorCliente.cadastrar_cliente("Marcio", "00000000033", "Paraguaçu", "32225555", "programador")
-    controladorCliente.cadastrar_cliente("Lucia", "00000000057", "Lavras", "32220001", "costureira")
+    #controladorCliente = ControladorCliente()
+    #controladorCliente.cadastrar_cliente("Sandro", "00000000001", "Varginha", "12345678", "ator")
 
-    #(usado para testar antes da criacao dos controladores)
-    #print("Id do Cliente:", novo_cliente.id)
-    #print("Nome do Cliente:", novo_cliente.nome)
-    #print("CPF do Cliente:", novo_cliente.cpf)
-    #print("Cidade do Cliente:", novo_cliente.cidade)
-    #print("Telefone do Cliente:", novo_cliente.telefone)
-    #print("Profissão do Cliente:", novo_cliente.profissao)
+#---------------------------------Atualizar Clientes--------------------------------------------
 
-    #2-Alterar/Atualizar um cliente existente:
-    #OBS: Função UPDATE esta dentro da operação salvar, por isso é possivel alterar e atualizar ao mesmo tempo.
-    
-    #(usado para testar antes da criacao dos controladores)
-    #cliente_teste = Cliente(1)
-    #cliente_teste.cidade = "Lavras"
-    #cliente_teste.salvar()
+    #controladorCliente = ControladorCliente()
+    #controladorCliente.atualizar_alterar_cliente(15,"Sandro", "78445123099", "Belo Horizonte", "32220000", "bailarino")
 
-    controladorCliente = ControladorCliente()
-    controladorCliente.atualizar_alterar_cliente(1,"Maria", "00000000002", "Belo Horizonte", "32220000", "bailarina")
+#----------------------------------Excluir Clientes---------------------------------------
 
-    #3-Excluir um cliente:
-    #Caso o cliente seja inexistente, é esperado erro "Não é possível excluir".
+    #controladorCliente = ControladorCliente()
+    #controladorCliente.excluir_cliente(13)
 
-    #(usado para testar antes da criacao dos controladores)
-    #excluir_cliente1 = Cliente(1)
-    #excluir_cliente1.excluir()
+#----------------------------------Obter dados do cliente------------------------
 
-    controladorCliente = ControladorCliente()
-    controladorCliente.excluir_cliente(1)
+    #controladorCliente = ControladorCliente()
+    #cliente = controladorCliente.obter_dado_cliente("Sandro")
+    #print(cliente)
 
-    #4-Obter dados do cliente:
-
-    controladorCliente = ControladorCliente()
-    cliente = controladorCliente.obter_dado_cliente("Marcio")
-    print(cliente)
-
-    #5-Listar todos os clientes:
+#-------------------------------- Listar todos os clientes ----------------------
 
     controladorCliente = ControladorCliente()
     todos = controladorCliente.listar_todo_cliente()
     print(todos)
 
-    #6-Cadastrar nova profissão:
+#---------------------------------Cadastrar profissão---------------------------
 
-    #(usado para testar antes da criacao dos controladores)
-    #nova_profissao = Profissao()
-    #nova_profissao.nome_profissao = "professor"
-    #nova_profissao.salvar()
+    #controladorProfissao = ControladorProfissao()
+    #controladorProfissao.cadastrar_profissao("bandido")
 
-    controladorProfissao = ControladorProfissao()
-    controladorProfissao.cadastrar_profissao("medico")
-    controladorProfissao.cadastrar_profissao("engenheiro")
+#---------------------Atualizar profissão--------------------------
 
-    #7-Alterar/Atualizar uma profissao existente:
+    #controladorProfissao = ControladorProfissao()
+    #controladorProfissao.atualizar_alterar_profissao(1, "psicólogo")
 
-    #(usado para testar antes da criacao dos controladores)
-    #profissao_teste = Profissao(1)
-    #profissao_teste.nome_profissao = "medico"
-    #profissao_teste.salvar()
+#-------------------Excluir Profissão-------------------------------
 
-    controladorProfissao = ControladorProfissao()
-    controladorProfissao.atualizar_alterar_profissao(1, "psicólogo")
-
-    #8-Excluir uma profissao:
-
-    #(usado para testar antes da criacao dos controladores)
-    #excluir_profissao1 = Profissao(1)
-    #excluir_profissao1.excluir()
-
-    controladorProfissao = ControladorProfissao()
-    controladorProfissao.excluir_profissao(1)
+    #controladorProfissao = ControladorProfissao()
+    #controladorProfissao.excluir_profissao(2)
 
 
 main()

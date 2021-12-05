@@ -19,10 +19,10 @@ class Profissao(Modelo):
     def salvar(self):
         try:
             if self.id:
-                instrucao = "UPDATE {tabela} SET nome_profissao=%s WHERE id=%s".format(tabela =self.Tabela)
+                instrucao = "UPDATE {tabela} SET profissao=%s WHERE id=%s".format(tabela =self.Tabela)
                 self.obter_cursor().execute(instrucao, [self.nome_profissao,self.id])
             else:
-                instrucao = "INSERT INTO {tabela} (nome_profissao) VALUES (%s)".format(tabela =self.Tabela)
+                instrucao = "INSERT INTO {tabela} (profissao) VALUES (%s)".format(tabela =self.Tabela)
                 self.obter_cursor().execute(instrucao, [self.nome_profissao])
                 self.id = self.obter_cursor().lastrowid
             return True
